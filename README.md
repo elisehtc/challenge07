@@ -12,9 +12,13 @@ CONTAINER ID   IMAGE            COMMAND                  CREATED          STATUS
 Pour la Solution 2 - Mount the host's docker unix socket onto the Jenkins container, j'ai utilisé le docker-compose.yml du dossier Solution 2 puis j'ai exécuté la commande
 docker-compose up
 
+J'ai fait des captures d'écran du résultats.
+
 
 Pour la Solution 3 - Run the official docker-in-docker image and expose its TCP socket to the Jenkins container, j'ai utilisé le docker-compose.yml du dossier Solution 3 puis j'ai exécuté la commande:
 docker-compose up
+
+J'ai fait des captures d'écran du résultats.
 
 Pour le HOW-TO officiel d'installation de Jenkins sous Docker, qui correspond à la Solution 3 de Tiu Wee Han, j'ai utilisé le Dockerfile du dossier jenkins-officiel puis j'ai exécuté les commandes suivantes:
 
@@ -33,5 +37,7 @@ docker build --tag jenkins-officiel-docker .
 docker run --name jenkins-blueocean --rm --detach --network jenkins --env DOCKER_HOST=tcp://docker:2376 --env DOCKER_CERT_PATH=/certs/client --env DOCKER_TLS_VERIFY=1 --volume jenkins-data:/var/jenkins_home --volume jenkins-docker-certs:/certs/client:ro --publish 8085:8080 --publish 50005:50000 jenkins-officiel-docker
 
 Et comme tout était en ordre, j'ai pu aller sur le Setup wizard de Jenkins.
+
+J'ai fait des captures d'écran du résultats.
 
 Je suis arrivée au bout du Katacoda sans problème mais comme indiqué l'environnement de l'agent est deja pré-configuré par l'auteur donc pas de vrai challenge  à ce niveau.
