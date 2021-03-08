@@ -33,3 +33,5 @@ docker build --tag jenkins-officiel-docker .
 docker run --name jenkins-blueocean --rm --detach --network jenkins --env DOCKER_HOST=tcp://docker:2376 --env DOCKER_CERT_PATH=/certs/client --env DOCKER_TLS_VERIFY=1 --volume jenkins-data:/var/jenkins_home --volume jenkins-docker-certs:/certs/client:ro --publish 8085:8080 --publish 50005:50000 jenkins-officiel-docker
 
 Et comme tout était en ordre, j'ai pu aller sur le Setup wizard de Jenkins.
+
+Je suis arrivée au bout du Katacoda sans problème mais comme indiqué l'environnement de l'agent est deja pré-configuré par l'auteur donc pas de vrai challenge  à ce niveau.
